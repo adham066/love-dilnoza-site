@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Дилноза 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    .intro {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #ffccd5;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      animation: fadeOut 3s ease-in-out 3s forwards;
+    }
+    .intro h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5em;
+      color: #d6336c;
+    }
+    .heart {
+      font-size: 2em;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+    header {
+      padding: 100px 20px 30px;
+    }
+    header h2 {
+      font-size: 2.5em;
+      font-family: 'Pacifico', cursive;
+    }
+    .section {
+      padding: 50px 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .button {
+      background: #fff;
+      color: #d6336c;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1em;
+      margin: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .button:hover {
+      background: #ffd6e0;
+    }
+    iframe {
+      width: 90%;
+      max-width: 600px;
+      height: 340px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      margin-top: 20px;
+    }
+    .gift-message {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.2em;
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .form-section input, .form-section textarea {
+      padding: 10px;
+      width: 80%;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+    }
+    .quotes {
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #fff;
+      font-style: italic;
+      font-size: 1.1em;
+    }
+    .insta {
+      margin-top: 30px;
+      color: #fff;
+      text-decoration: underline;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<div class="intro">
+  <h1>Загружается любовь...</h1>
+  <div class="heart">💗💗💗</div>
+</div>
+
+<header>
+  <h2>Дилноза, я тебя жду ❤️</h2>
+  <p>Не обижайся... Я тебя очень люблю 🥺</p>
+  <div style="font-size:2em;">💘💋🌹💖✨</div>
+</header>
+
+<section class="section">
+  <h3>🌈 Воспоминания</h3>
+  <p>Я помню каждую твою улыбку, каждый наш разговор, каждое мгновение с тобой — как волшебство.</p>
+</section>
+
+<section class="section">
+  <h3>💖 Почему ты — особенная</h3>
+  <p>Ты добрее всех, ты светлее солнца. Когда ты рядом — мир становится лучше.</p>
+</section>
+
+<section class="section">
+  <h3>🌟 О будущем</h3>
+  <p>Я хочу быть рядом всегда. Любить тебя. Заботиться о тебе. И слышать твой голос каждый день.</p>
+</section>
+
+<section class="section">
+  <h3>🎁 Подарок для тебя</h3>
+  <button class="button" onclick="showGift()">Открыть 🎁</button>
+  <div class="gift-message" id="gift">
+    💌 Ты — мой смысл, моё всё. Я просто жду твоего звонка... 📞  
+    <div style="font-size:2em;">💞💞💞</div>
+  </div>
+</section>
+
+<section class="section">
+  <h3>🎥 Наш любимый клип</h3>
+  <iframe src="https://www.youtube.com/embed/7LO03w9GZF4?rel=0" allowfullscreen></iframe>
+</section>
+
+<section class="section">
+  <h3>📜 Цитаты о любви</h3>
+  <div class="quotes" id="quoteBox">"Любовь — это когда ты находишь кого-то, кто делает твоё сердце счастливым."</div>
+</section>
+
+<section class="section form-section">
+  <h3>📩 Напиши мне письмо</h3>
+  <input type="text" placeholder="Твоё имя"><br>
+  <textarea rows="4" placeholder="Сообщение..."></textarea><br>
+  <button class="button">Отправить 💌</button>
+</section>
+
+<section class="section">
+  <a href="tel:+998901234567" class="button">Позвонить мне 📞</a>
+  <a href="https://instagram.com/the_06_06" target="_blank" class="insta">@the_06_06 в Instagram</a>
+</section>
+
+<script>
+  // Плавное появление секций при прокрутке
+  const sections = document.querySelectorAll('.section');
+  window.addEventListener('scroll', () => {
+    sections.forEach(sec => {
+      const rect = sec.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        sec.classList.add('visible');
+      }
+    });
+  });
+
+  // Подарок
+  function showGift() {
+    document.getElementById('gift').style.display = 'block';
+  }
+
+  // Цитаты
+  const quotes = [
+    "Любовь — это когда ты находишь кого-то, кто делает твоё сердце счастливым.",
+    "Ты для меня как воздух, без тебя не могу дышать.",
+    "Ты — не просто девушка, ты — вдохновение и свет.",
+    "Когда ты улыбаешься, весь мир становится ярче.",
+    "С тобой — навсегда. Это моя мечта."
+  ];
+  let quoteIndex = 0;
+  setInterval(() => {
+    quoteIndex = (quoteIndex + 1) % quotes.length;
+    document.getElementById('quoteBox').textContent = quotes[quoteIndex];
+  }, 4000);
+</script>
+
+</body>
+</html>
